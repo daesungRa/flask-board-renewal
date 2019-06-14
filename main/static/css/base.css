@@ -1,0 +1,211 @@
+/* font */
+@import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic+Coding|Nanum+Myeongjo&display=swap');
+welcome-message
+
+/* triangle icon */
+.triangle {display:inline-block; width:0; height:0; border-style:solid; border-width:6px;}
+.triangle.underbar {
+    border-color:#000 transparent transparent transparent;
+}
+.triangle.underbar:hover {
+    border-color:#797979 transparent transparent transparent;
+}
+
+/* Links */
+a, a:focus, a:hover {
+    color: #797979;
+}
+
+/* Custom default button */
+.btn-default, .btn-default:hover, .btn-default:focus {
+    color: #333;
+    text-shadow: none; /* Prevent inheritence from 'body' */
+    background-color: #a7b8da;
+    border: 1px;
+}
+
+/* Base structure */
+html, body {
+    height: 100%;
+    /*background-color: #56bacc;*/
+    /*background-color: #dfdfc8;*/
+    background-color: #e3eef5;
+}
+body {
+    color: #000;
+    text-align: center;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+    position: relative;
+    display: table;
+    width: 100%;
+    height: 70%;
+    min-height: 70%;
+    -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+            box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+    display: table-cell;
+    vertical-align: middle;
+}
+.cover-container {
+    padding: 30px; 0 50px 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Padding for spacing */
+.inner {
+    padding: 30px 90px 48px 90px;
+    background-color: rgba(255, 255, 255, 0);
+}
+.masthead .inner {
+    border-bottom: 2px solid #9c9c9c;
+    margin-top: 70px;
+}
+
+/* Content Style */
+.cover-container .message-container {
+    position: fixed;
+    top: 9%;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    text-align: center;
+}
+.cover-container .alert-message {
+    display: inline-block;
+    width: 60%;
+}
+.cover-container .cover-video {
+    position: absolute;
+    right: 0;
+    top: 0;
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.cover-container .cover-contents {
+    position: absolute;
+    text-align: center;
+    left: 0;
+    top: 27%;
+    width: 100%;
+    min-height: 230px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 0 5px 0;
+}
+.cover-container .cover-contents a {
+    color: #fff;
+}
+
+/*
+ * Header
+ */
+.masthead-brand {
+    margin-bottom: 10px;
+}
+.masthead-brand:hover, .masthead-brand:focus {
+    color: #696969;
+    cursor: pointer;
+}
+.masthead-nav > li {
+    display: inline-block;
+}
+.masthead-nav > li + li {
+    margin-left: 20px;
+}
+.masthead-nav > li > a {
+    padding-right: 0;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff; /* IE8 proofing */
+    color: rgba(255,255,255,.75);
+    border-bottom: 2px solid transparent;
+}
+.masthead-nav > li > a:hover, .masthead-nav > li > a:focus {
+    background-color: transparent;
+    border-bottom-color: #a9a9a9;
+    border-bottom-color: rgba(255,255,255,.25);
+}
+.masthead-nav > .active > a, .masthead-nav > .active > a:hover, .masthead-nav > .active > a:focus {
+    color: #797979;
+    border-bottom-color: #797979;
+}
+.masthead-nav > #account-management:hover {
+    color: #797979;
+    cursor: pointer;
+}
+.masthead-nav > #account-management > .account-dropdown {
+    display: inline-block;
+}
+@media (min-width: 768px) {
+    .masthead-brand {
+        float: left;
+    }
+    .masthead-nav {
+        float: right;
+    }
+}
+
+/*
+ * Cover
+ */
+.cover {
+    padding: 0 20px;
+    text-align: center;
+}
+.cover .btn-lg {
+    padding: 10px 20px;
+    font-weight: bold;
+}
+
+/*
+ * Footer
+ */
+.mastfoot {
+    color: #acacac; /* IE8 proofing */
+    color: rgba(128,128,128,.5);
+}
+
+/*
+ * Affix and center
+ */
+@media (min-width: 768px) {
+    /* Pull out the header and footer */
+    .masthead {
+        position: fixed;
+        top: 0;
+    }
+    .mastfoot {
+        position: fixed;
+        bottom: 0;
+    }
+    /* Start the vertical centering */
+    .site-wrapper-inner {
+        vertical-align: middle;
+    }
+    /* Handle the widths */
+    .masthead,
+    .mastfoot,
+    .cover-container {
+        width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    }
+}
+
+@media (min-width: 992px) {
+    .masthead,
+    .mastfoot,
+    .cover-container {
+        width: 700px;
+    }
+}
+
+

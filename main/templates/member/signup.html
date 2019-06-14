@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% from "macros.html" import account_macro with context %}
+{% block content %}
+    {% if account_form[0] %}
+        {{ account_macro('account_signup', 'SIGN UP', account_form[0]) }}
+    {% else %}
+        {{ account_macro('account_signup', 'SIGN UP', account_form) }}
+    {% endif %}
+{% endblock content %}

@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+    <!--<video class="cover-video" autoplay loop muted>
+        <source src="/static/videos/cover0{{ range(1, 5)|random }}.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+    </video>-->
+    <div class="cover-contents">
+        <p class="index-title">Welcome!!</p>
+        <div class="main-container">
+            <form class="form-group" id="fakebox">
+                <input class="form-control search-bar" id="custom-search-bar" type="text" placeholder="Search Google or type a URL (custom)" />
+                <button id="fakebox-microphone" type="button" title="search in voice"></button>
+            </form>
+            <div class="autocomplete-box"><div class="autocomplete-frame"><div class="autocomplete-container"></div></div></div>
+        </div>
+        <div class="shortcut-container">
+            <a class="shortcut-link" href="https://github.com/daesungra" title="daesungra-github" target="_blank">
+                <div class="shortcut" title="daesungra-github">
+                    <img class="shortcut-img" src="{{ url_for('static', filename='imgs/gitcat01.png') }}" title="daesungra-github" alt="daesungra-github" />
+                </div>
+                <div class="shortcut-title" title="daesungra-github">
+                    daesungra
+                </div>
+                <div class="shortcut-settings" href="localhost:5000/" title="shortcut-settings">
+                    ...
+                </div>
+            </a>
+            <a class="shortcut-link" href="#" title="#" target="">
+                <div class="shortcut-add" title="add shortcut">
+                    +
+                </div>
+                <div class="shortcut-title" title="add shortcut">
+                    add shortcut
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="timeline-container">
+        <div class="timeline-title">
+            <span>TIMELINE</span>
+            <span class="tot-connection">현재 접속자 수: 0</span>
+        </div>
+        <div class="timeline-content">No Contents</div>
+        <div class="form-group timeline-form">
+            <input type="text"  class="form-control timeline-input-bar" id="my-timeline" />
+            <button class="btn btn-sm btn-outline-info" id="btn-send">SEND</button>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            convertPage($('.masthead-nav > #gotoHome'));
+
+            $('#custom-search-bar').focus();
+
+            $('#custom-search-bar').keyup(function(e) {
+                funcAutocomplete(e);
+            });
+
+            socketio();
+        });
+    </script>
+{% endblock content %}

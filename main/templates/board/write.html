@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="board-guide"> <!-- 모듈화 하기! -->
+        <button class="btn btn-sm btn-default" id="gotoListPage">목록으로</button>
+    </div>
+    <br/><hr/>
+    <div class="write-container">
+        <div class="profile-part">
+            <div class="profile-container">
+                <img id="image" src="{{ url_for('static', filename='imgs' + session.profile.split('imgs')[1]) }}" alt="profile-image" />
+            </div>
+        </div>
+        <span>{{ subject }}</span>
+        <hr>
+        <form class="form-group write-form">
+            <!--<select name="board-type" class="form-control" required>
+                <option>(선택) 게시판 종류를 선택하세요</option>
+                <option value="0" selected>게시글</option>
+                <option value="1">할 일</option>
+            </select>-->
+            <input name="title" type="text" class="form-control" placeholder="제목을 입력하세요" />
+            <input name="author" type="text" class="form-control" value="{{ session.nickname }}" readonly />
+            <input name="created" type="text" class="form-control" value="{{ currTime }}" readonly />
+            <textarea name="content" class="summernote"></textarea>
+            <button type="button" class="btn btn-sm btn-default" id="write-submit">제 출</button>
+        </form>
+    </div>
+    <hr/>
+
+    <script>
+        $(document).ready(function () {
+            var highlight = 'Board';
+            var pre_uri = 'boards/';
+
+            if ('{{ subject }}' == 'Todo Write') {
+                highlight = 'Todo';
+                pre_uri = 'todos/';
+            }
+
+            convertPage($('.masthead-nav > #goto' + highlight));
+
+            $('.summernote').summernote({
+                placeholder: '내용을 입력하세요',
+                tabsize: 2,
+                height: 200,
+                minHeight: 200,
+                maxHeight: null,
+                focus: true,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['fontname', ['fontname']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['link', 'picture', 'video']],
+                    ['view', ['fullscreen', 'help']],
+                ]
+            });
+
+            // go to list page
+            $('.board-guide #gotoListPage').on('click', function() {
+                getDocument(pre_uri, '');
+            });
+
+            // write action
+            $('.write-form #write-submit').on('click', function() {
+                writeAction($('.write-form'), highlight);
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,204 @@
+
+/* main index style */
+.index-title {
+    font-size: 36pt;
+}
+.cover-contents .main-container {
+    position: relative;
+}
+.search-bar {
+    border-radius: 5px;
+    padding-left: 25px;
+}
+#fakebox {
+    position: relative;
+    background-color: rgb(var(--GG100-rgb));
+    border-radius: 22px;
+    cursor: text;
+    font-size: 18px;
+    height: 44px;
+    line-height: 36px;
+    margin: 0 auto;
+    max-width: 560px;
+    opacity: 1;
+    transition: background-color 300ms ease-in-out, opacity 200ms;
+}
+#fakebox-microphone {
+    background: url(http://localhost:5000/static/imgs/mic01.png) no-repeat center;
+    background-size: 12px 18px;
+    bottom: 0;
+    cursor: pointer;
+    margin-inline-end: 12px;
+    padding: 22px 12px 0;
+    position: absolute;
+    right: 0;
+    top: -6px;
+    width: 24px;
+    border: none;
+}
+.cover-contents .autocomplete-box {
+    position: absolute;
+    top: 23px;
+    width: 100%;
+    text-align: center;
+}
+.cover-contents .autocomplete-box .autocomplete-frame {
+    position: relative;
+    display: inline-block;
+    width: 560px;
+    border-radius: 5px;
+    z-index: 20;
+}
+.cover-contents .autocomplete-container {
+    width: 100%;
+    position: absolute;
+    top: 0; left: 0;
+}
+.cover-contents .autocomplete-container button {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    text-align: left;
+    padding-left: 25px;
+}
+.cover-contents .autocomplete-container div {
+    width: 100%;
+    background-color: #fff;
+    color: #575757;
+    text-shadow: none;
+    border: none;
+    text-align: left;
+    padding-left: 25px;
+}
+
+/* shortcut part */
+.shortcut-container {
+    text-align: center;
+    width: 100%;
+    margin: 40px 0 40px 0;
+}
+.shortcut-link {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    width: 100px;
+    height: 110px;
+    border-radius: 5px;
+}
+.shortcut-link:hover {
+    background-color: #fff9fa;
+    cursor: pointer;
+}
+.shortcut {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 60px;
+}
+.shortcut-img {
+    width: 45px;
+    height: 45px;
+    margin-top: 2px;
+}
+.shortcut-title {
+    display: inline-block;
+    font-size: 10pt;
+    margin-top: 15px;
+}
+.shortcut-settings {
+    position: absolute;
+    top: 0;
+    right: 6px;
+    font-size: 14px;
+}
+.shortcut-add {
+    display: inline-block;
+    font-size: 22pt;
+    width: 50px;
+    height: 50px;
+    background-color: #fff;
+    margin-top: 15px;
+    border-radius: 60px;
+}
+
+/* timeline style */
+.timeline-container {
+    position: fixed;
+    top: 100px; left: 60px; width: 240px; height: 620px;
+    font-size: 9pt;
+    background-color: #fff;
+}
+.timeline-container * {
+    font-size: 9pt;
+}
+.timeline-container .timeline-title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 5px 0 5px 0;
+    border-bottom: 1px solid #bebebe;
+}
+.timeline-container .timeline-title * {
+    font-size: 18pt;
+}
+.timeline-container .timeline-title .tot-connection {
+    position: absolute;
+    top: 48px;
+    right: 5px;
+    font-size: 8pt;
+}
+.timeline-container .timeline-content {
+    position: absolute;
+    top: 62px;
+    width: 100%;
+    padding: 5px 0 5px 0;
+}
+.timeline-container .timeline-content ul {
+    list-style: none;
+    text-align: left;
+    padding-right: 10px;
+    margin-left: -35px;
+    height: 518px;
+    overflow-y: scroll;
+}
+.timeline-container .timeline-form {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 0;
+}
+.timeline-container .timeline-form input {
+    width: 80%;
+    height: 35px;
+    float: left;
+}
+.timeline-container .timeline-form button {
+    width: 20%;
+    height: 35px;
+    float: left;
+}
+@media (max-width: 1260px) {
+    .timeline-container {
+        position: relative;
+        width: 85%;
+        height: 0;
+        min-height: 360px;
+        margin: 540px 0 120px -18px;
+    }
+    .timeline-container .timeline-content {
+        position: absolute;
+        top: 62px;
+        width: 100%;
+        /*min-height: 300px;*/
+        height: 300px;
+    }
+    .timeline-container .timeline-content ul {
+        height: 258px;
+    }
+}
+
+
+
+

@@ -1,0 +1,200 @@
+/*
+ * board guide style
+ */
+.board-guide {
+    width: 100%;
+}
+.board-guide .subject {
+    float: left;
+    font-size: 22pt;
+}
+.board-guide .btn-default {
+    float: right;
+    margin-left: 5px;
+}
+
+/*
+ * board list style (table)
+ */
+.cover .table-board, .cover .table-head, .cover .table-body {
+    /*border: 1px solid blue;*/
+}
+.cover .board-container {
+    padding: 0 10px 0 10px;
+    background-color: #fff;
+    border: 1px solid #acacac;
+}
+.cover .table-board {
+    margin: 40px 0 40px 0;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+.cover .table-head {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+.cover .table-body {
+    margin-bottom: 3px;
+}
+.cover .table-body:hover {
+    background-color: #d4dde6;
+    cursor: pointer;
+}
+.cover .table-board span {
+    font-size: 10pt;
+    border-left: 1px solid #bdbdbd;
+}
+/* pagination style */
+.pagination-part {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.pagination-part * {
+    display: inline;
+}
+.pagination-part li {
+    margin-right: 5px;
+}
+.pagination-part .alter_page:hover {
+    color: #ababab;
+    cursor: pointer;
+}
+.pagination-part span {
+    display: none;
+}
+
+/*
+ * button style
+ */
+.cover .btn-test {
+    width: 60%;
+    height: 60%;
+    margin-top: 10px;
+}
+
+/*
+ * not found
+ */
+.cover .notFound {
+    margin-top: 30px;
+}
+
+/*
+ * write page
+ */
+.write-container {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px 15px 20px 15px;
+    border: 1px solid #ababab;
+}
+.write-container > span {
+    font-size: 24pt;
+}
+.write-container .profile-part {
+    display: inline-block;
+    margin-right: 10px;
+}
+.write-container .profile-part .profile-container #image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.write-container > .write-form > input, select {
+    font-size: 10pt;
+    font-weight: bolder;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-bottom: 10px;
+}
+.write-container > .write-form > button {
+    margin-top: 10px;
+}
+
+/*
+ * view page
+ */
+.view-container {
+    position: relative;
+    text-align: left;
+    text-shadow: none;
+    min-height: 500px;
+    background-color: #fff;
+    padding: 20px 15px 20px 15px;
+    border: 1px solid #ababab;
+}
+.view-container > span:first-child {
+    font-size: 14pt;
+}
+.view-container > span {
+    font-size: 8pt;
+}
+.view-container > .view-left {
+    width: 82%;
+    margin-bottom: 20px;
+}
+.view-container > .view-right {
+    position: absolute;
+    text-align: center;
+    right: 4%;
+    top: 65px;
+    width: 16%;
+    height: 85%;
+    padding-top: 30px;
+    border-left: 1px solid #ddd;
+}
+.view-container > .view-right > button {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.view-container .view-head {
+    position: relative;
+    margin-bottom: 10px;
+}
+.view-container .view-head > div {
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+}
+.view-container .view-head > .view-component {
+    font-size: 7pt;
+    width: 155px;
+    background-color: #fffdfd;
+    padding-left: 10px;
+}
+.view-container .view-head > .view-title {
+    font-size: 18pt;
+}
+
+/*
+ * write page
+ */
+.modify-container {
+    text-align: left;
+    background-color: #fff;
+    padding: 20px 15px 20px 15px;
+    border: 1px solid #ababab;
+}
+.modify-container > span {
+    font-size: 24pt;
+}
+.modify-container .profile-part {
+    display: inline-block;
+    margin-right: 10px;
+}
+.modify-container .profile-part .profile-container #image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+}
+.modify-container > .modify-form > input, select {
+    font-size: 10pt;
+    font-weight: bolder;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Nanum Gothic Coding', monospace;
+    margin-bottom: 10px;
+}
+.modify-container > .modify-form > button {
+    margin-top: 10px;
+}
+
