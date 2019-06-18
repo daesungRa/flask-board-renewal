@@ -1,10 +1,12 @@
-from flask import render_template
+from flask import render_template, session
 from flask.views import MethodView
 
 class IndexView(MethodView):
-    def __init__(self):
-        pass
-
     def get(self, id=None):
-        print('[GET] call index view function!')
-        return render_template('home.html'), 200
+        session.permanent = True
+        return render_template('index.html'), 200
+
+class ContactView(MethodView):
+    def get(self, id=None):
+        return render_template('contact.html'), 200
+

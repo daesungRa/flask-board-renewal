@@ -41,7 +41,7 @@ function funcAutocomplete(e) {
         if (val.length > 1) {
             $.ajax({
                 type: 'post',
-                url: '/autocomplete',
+                url: '/autocomplete/',
                 data: {query: val},
                 dataType: 'json',
                 success: function(jsonData) {
