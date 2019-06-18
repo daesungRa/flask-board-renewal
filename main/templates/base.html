@@ -36,10 +36,10 @@
             <h3 class="masthead-brand" onclick="location.href='http://localhost:5000/'">Flask Board</h3>
             <nav>
                 <ul class="nav masthead-nav">
-                    <li id="gotoHome"><a href="http://localhost:5000/">Home</a></li>
-                    <li id="gotoBoard"><a href="http://localhost:5000/boards/">Board</a></li>
-                    <li id="gotoTodo"><a href="http://localhost:5000/todos/">Todo</a></li>
-                    <li id="gotoContact"><a href="http://localhost:5000/contact/">Contact</a></li>
+                    <li id="gotoHome"><a href="http://localhost:5000">Home</a></li>
+                    <li id="gotoBoard"><a href="http://localhost:5000/boards">Board</a></li>
+                    <li id="gotoTodo"><a href="http://localhost:5000/todos">Todo</a></li>
+                    <li id="gotoContact"><a href="http://localhost:5000/contact">Contact</a></li>
                     <!--<li id="account-management">
                         <span>account</span>
                         <div class="dropdown account-dropdown">
@@ -90,17 +90,17 @@
                 <div class="welcome-message">
                     Welcome, <strong><i><TT>{{ session['nickname'] }}</TT></i></strong>
                 </div>
-                <button type="button" id="btn_signout" class="btn btn-sm btn-secondary" onclick="location.href = '/signout/'">
+                <button type="button" id="btn_signout" class="btn btn-sm btn-secondary" onclick="location.href = '/users'">
                     SIGN OUT
                 </button>
                 <button type="button" id="btn_mypage" class="btn btn-sm btn-secondary" onclick="location.href = '#mypage'">
                     MY PAGE
                 </button>
             {% else %}
-                <button type="button" id="btn_signin" class="btn btn-sm btn-secondary" onclick="location.href = '/signin/'">
+                <button type="button" id="btn_signin" class="btn btn-sm btn-secondary" onclick="location.href = '/sessions'">
                     SIGN IN
                 </button>
-                <button type="button" id="btn_signup" class="btn btn-sm btn-secondary" onclick="location.href = '/signup/'">
+                <button type="button" id="btn_signup" class="btn btn-sm btn-secondary" onclick="location.href = '/users'">
                     SIGN UP
                 </button>
             {% endif %}

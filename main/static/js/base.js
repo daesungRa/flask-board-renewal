@@ -41,7 +41,7 @@ function funcAutocomplete(e) {
         if (val.length > 1) {
             $.ajax({
                 type: 'post',
-                url: '/autocomplete/',
+                url: '/autocomplete',
                 data: {query: val},
                 dataType: 'json',
                 success: function(jsonData) {
@@ -71,7 +71,7 @@ function funcAutocomplete(e) {
 function funcSearch(word) {
     $.ajax({
         type: 'post',
-        url: '/search',
+        url: '/auto_search',
         data: {word: word},
         dataType: 'json',
         success: function(data) {

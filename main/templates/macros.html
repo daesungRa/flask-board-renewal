@@ -8,9 +8,9 @@
       <div class="account-body">
         <div class="content-section">
           {% if form.username %}
-          <form action="{{ url_for('signup') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ url_for('user') }}" method="POST" enctype="multipart/form-data">
           {% else %}
-          <form action="{{ url_for('signin') }}" method="POST">
+          <form action="{{ url_for('session_view') }}" method="POST">
           {% endif %}
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -108,9 +108,9 @@
         <div class="border-top pt-3">
           <small class="text-muted">
             {% if title == 'SIGN UP' %}
-              Already Have an Account? <span class="ml-2" onclick="location.href = '/signin/'">Sign In</span>
+              Already Have an Account? <span class="ml-2" onclick="location.href = '/session'">Sign In</span>
             {% else %}
-              Create Account? <span class="ml-2" onclick="location.href = '/signup/'">Sign Up</span>
+              Create Account? <span class="ml-2" onclick="location.href = '/users'">Sign Up</span>
             {% endif %}
           </small>
         </div>

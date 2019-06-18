@@ -1,10 +1,10 @@
 from flask import request, jsonify
 from flask.views import MethodView
-from main.services import autocomplete_service
+from main.services.autocomplete_service import Autocomplete_service
 
 class AutocompleteView(MethodView):
     def __init__(self):
-        self.auto_service = autocomplete_service.Autocomplete_service()
+        self.auto_service = Autocomplete_service()
 
     def post(self, id=None):
         query = request.form['query']
@@ -15,7 +15,7 @@ class AutocompleteView(MethodView):
 
 class AutocompleteSearchView(MethodView):
     def __init__(self):
-        self.auto_service = autocomplete_service.Autocomplete_service()
+        self.auto_service = Autocomplete_service()
 
     def post(self, id=None):
         word = request.values.get('word')

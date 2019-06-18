@@ -3,16 +3,19 @@ from main import db, create_app
 from main.routes import register_api, index, autocomplete, user, board
 
 app = create_app()
+instance_path = app.instance_path
 reg = register_api.Register_api(app)
 
 reg.register_api(index.IndexView, 'index', '/')
-reg.register_api(index.ContactView, 'contact', '/contact/')
-reg.register_api(autocomplete.AutocompleteView, 'autocomplete', '/autocomplete/')
-reg.register_api(autocomplete.AutocompleteSearchView, 'search', '/search/')
+reg.register_api(index.ContactView, 'contact', '/contact')
+reg.register_api(autocomplete.AutocompleteView, 'autocomplete', '/autocomplete')
+reg.register_api(autocomplete.AutocompleteSearchView, 'auto_search', '/auto_search')
 
-reg.register_api(user.UserView, 'user', '/users/', pk='email', pk_type='string')
+reg.register_api(user.UserView, 'user', '/users', pk='id', pk_type='string')
+reg.register_api(user.SessionView, 'session_view', '/sessions', pk='id', pk_type='string')
 
-reg.register_api(board.BoardView, 'board', '/boards/', pk='_id', pk_type='string')
+reg.register_api(board.BoardView, 'board', '/boards', pk='_id', pk_type='string')
+reg.register_api(board.BoardView, 'todo', '/todos', pk='_id', pk_type='string')
 
 # error routes
 @app.errorhandler(404)
