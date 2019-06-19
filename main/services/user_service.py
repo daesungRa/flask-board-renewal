@@ -34,17 +34,16 @@ class User_service(object):
         return create_account_result
 
     def access_account(self, form):
-        # criteria = {'email': form.email.data}
-        # saved_result = self.db.find_one(criteria, self.collection_name, projection=['email', 'pwd', 'nickname', 'profile'])
-        #
-        # if saved_result:
-        #     result = self.encryption_instance.check_pwd(saved_result['pwd'], form.pwd.data)
-        #
-        #     if result:
-        #         saved_result.pop('pwd')
-        #         return saved_result
-        # return None
-        pass
+        criteria = {'email': form.email.data}
+        saved_result = self.db.find_one(criteria, self.collection_name, projection=['email', 'pwd', 'nickname', 'profile'])
+
+        if saved_result:
+            result = self.encryption_instance.check_pwd(saved_result['pwd'], form.pwd.data)
+
+            if result:
+                saved_result.pop('pwd')
+                return saved_result
+        return None
 
     def find_account(self, form):
         # 이메일(아이디)이 다르다면 1, 비밀번호가 다르다면 2 플래그 반환

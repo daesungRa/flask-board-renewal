@@ -1,4 +1,4 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, session
 from flask.views import MethodView
 from main.forms.account_form import SignupForm, SigninForm
 from main.services.user_service import User_service
@@ -45,13 +45,30 @@ class UserView(MethodView):
 class SessionView(MethodView):
     def __init__(self):
         self.account_form = [SignupForm(), SigninForm()]
+        self.user_service = User_service()
 
     def get(self, id):
         return render_template('member/signin.html', account_form=self.account_form), 200
 
     def post(self):
-        # sign in!
-        pass
+        form = SigninForm()
+        if 'email' not in session and form.validate_on_submit:
+            access_account_result = self.user_service.access_account(form)
+
+            if access_account_result:
+                session['email'] = access_account_result['email']  # unique index
+                session['nickname'] = access_account_result['nickname']  # unique nickname
+                session['profile'] = access_account_result['profile'].replace('\\', '/')
+
+                flash(f'[Success] You are successfully Sign In for {form.email.data} account!', 'success')
+                return redirect(url_for('index'))
+            else:
+                flash(f'[Failure] There is no account information about {form.email.data}, or a password mismatched',
+                      'warning')
+                return render_template('member/signin.html', account_form=form), 200
+
+        flash(f'[Warning] Invalid Information, try again please', 'warning')
+        return render_template('member/signin.html', account_form=form), 200
 
     def put(self):
         pass
