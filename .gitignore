@@ -23,6 +23,6 @@ __pycache__/
 *.log
 
 # files
-src/**/*.jpg
-src/**/*.png
-src/**/*.mp4
+main/**/*.jpg
+main/**/*.png
+main/**/*.mp4
