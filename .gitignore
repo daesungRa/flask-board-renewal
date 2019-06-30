@@ -26,3 +26,6 @@ __pycache__/
 main/**/*.jpg
 main/**/*.png
 main/**/*.mp4
+./**/*.jpg
+./**/*.png
+./**/*.mp4
