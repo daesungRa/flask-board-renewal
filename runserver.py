@@ -17,16 +17,19 @@ reg.register_api(user.SessionView, 'session_view', '/sessions', pk='id', pk_type
 reg.register_api(board.BoardView, 'board', '/boards', pk='_id', pk_type='string')
 reg.register_api(board.BoardView, 'todo', '/todos', pk='_id', pk_type='string')
 
+
 # error routes
 @app.errorhandler(404)
 def page_not_found(error):
     app.logger.error(error)
     return render_template('error/404.html'), 200
 
+
 @app.errorhandler(500)
 def server_side_error(error):
     app.logger.error(error)
     return render_template('error/500.html'), 200
+
 
 if __name__ == '__main__':
     with app.app_context():
